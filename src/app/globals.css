@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b1b33;
+  --muted: #45546b;
+  --sky: #eaf4ff;
+  --tomato: #c93a22;
+  --danger: #a3210b;
+  --ok: #0b6b4d;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  color-scheme: light;
+}
+body {
+  background: var(--sky);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible {
+  outline: 3px solid var(--tomato);
+  outline-offset: 3px;
+}
+
+.display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 1rem;
+}
+.field {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  font: inherit;
+}
+.label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1rem;
+  background: var(--tomato);
+  color: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.btn-quiet {
+  background: #fff;
+  color: var(--ink);
+}
+.btn-danger {
+  background: #fff;
+  color: var(--danger);
+  border-color: var(--danger);
+  box-shadow: 3px 3px 0 var(--danger);
+}
+
+/* Tag stickers: slightly tilted, like labels stuck on a page. */
+.sticker {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  transform: rotate(-2deg);
+}
+.sticker-new {
+  background: #b8f0d0;
+}
+.sticker-improved {
+  background: #bfd9ff;
+}
+.sticker-fixed {
+  background: #ffe58a;
+}
+
+/* Tear-off calendar leaf */
+.leaf {
+  flex: none;
+  width: 4.75rem;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  text-align: center;
+}
+.leaf-top {
+  padding: 0.15rem 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--ink);
+}
+.leaf-day {
+  padding: 0.15rem 0 0.3rem;
+  font-family: var(--font-display), sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
